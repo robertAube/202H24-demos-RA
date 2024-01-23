@@ -12,7 +12,7 @@ public class LesExceptions {
         try {
             System.out.println("traiterException : avant exception");
             lancerUneExceptionV2(false);
-            System.out.println("traiterException : après exception"); //cette ligne ne pourrait pas être atteint
+            System.out.println("traiterException : après exception"); //cette ligne est atteinte seulement si la ligne précédente ne fait pas d'erreurs
         } catch (Exception e) {
             System.out.println("Traiter exception");
             System.out.println(e.getMessage());
@@ -25,17 +25,17 @@ public class LesExceptions {
             System.out.println("avant exception");
             throw new RuntimeException("Test exception"); // il y a un problème
             //     System.out.println("après exception"); //cette ligne ne pourrait pas être atteint
-        } catch (RuntimeException exception) { //bloc catch : traite l'exception
+        } catch (RuntimeException exception) { //bloc catch : traite l'exception du bloc try
             System.out.println(exception.getMessage());
         }
         System.out.println("fin lancerUneExceptionV1");
     }
 
-    private void lancerUneExceptionV2(boolean faireUneErreur) throws Exception { //propager une exception
+    private void lancerUneExceptionV2(boolean faireUneErreur) throws Exception { //throws indique que la méthode propage une exception
         if (faireUneErreur) {
             System.out.println("lancerUneExceptionV2 : avant exception");
             throw new Exception("Il y a une erreur");
-            //     System.out.println("après exception"); //cette ligne ne pourrait pas être atteint
+            //     System.out.println("après exception"); //cette ligne ne pourrait pas être atteinte
         }
         System.out.println("lancerUneExceptionV2 : fin");
     }
