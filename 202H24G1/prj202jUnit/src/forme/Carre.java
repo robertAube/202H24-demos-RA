@@ -26,6 +26,10 @@ public class Carre {
         this(COTE_DEFAUT);
     }
 
+    /**
+     * Constructeur pour un carré dont on spécifie la longueur du côté
+     * @param cote longueur du côté. Doit être entre DIM_MIN et DIM_MAX
+     */
     public Carre(int cote) {
         setCote(cote);
     }
@@ -60,13 +64,24 @@ public class Carre {
     }
 
 
+    /**
+     * Retourne vrai si le carré courant est plus petit que le carré reçu en argument
+     * @param c Un carré quelconque
+     * @return vrai si le carré courant est plus petit que le carré reçu en argument
+     */
     public boolean estPlusPetit(Carre c) {
         return this.cote < c.cote;
     }
 
+    /**
+     * Retourne vrai si le carré courant est plus petit que le carré reçu en argument
+     * @param c Un carré quelconque
+     * @return vrai si le carré courant est plus petit que le carré reçu en argument
+     */
     public boolean estPlusGrand(Carre c) {
         return this.cote > c.cote;
     }
+
 
     @Override
     public boolean equals(Object o) {
