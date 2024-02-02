@@ -28,7 +28,7 @@ public class CarreApp {
     }
 
     private void afficherCarre() {
-        for (Carre c: listeCarre) {
+        for (Carre c: listeCarre) { //for each : Pour tous les carrés (ça peut seulement être ça)
             System.out.println(c);
         }
     }
