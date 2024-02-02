@@ -1,8 +1,7 @@
 package forme;
 
 /**
- * Carre - Démo pour JUnit
- *
+ * Carré décrit par son côté.
  * @author Robert Aubé
  * @version V1.1
  */
@@ -11,7 +10,14 @@ public class Carre {
      * La valeur par défaut du côté d'un carré
      */
     public static final int COTE_DEFAUT = 1;
+    /**
+     * La valeur minimum d'un carré accepté
+     */
     public static final int DIM_MIN = 0;
+
+    /**
+     * La valeur maximum d'un carré accepté
+     */
     public static final int DIM_MAX = 20;
 
     /**
@@ -26,6 +32,12 @@ public class Carre {
         this(COTE_DEFAUT);
     }
 
+//    /**
+//     * Constructeur pour un carré dont on spécifie la longueur du côté
+//     * @param cote longueur du côté. Doit être entre DIM_MIN et DIM_MAX
+//     */
+
+
     /**
      * Constructeur pour un carré dont on spécifie la longueur du côté
      * @param cote longueur du côté. Doit être entre DIM_MIN et DIM_MAX
@@ -37,7 +49,7 @@ public class Carre {
     /**
      * Modifie le côté du carré
      *
-     * @param cote le nouveau coté
+     * @param cote la dimension du nouveau coté
      */
     public void setCote(int cote) {
         if (coteEstValide(cote))
@@ -46,10 +58,19 @@ public class Carre {
             throw new IllegalArgumentException(cote + " n'est pas entre " + DIM_MIN + " et " + DIM_MAX + ".");
     }
 
+    /**
+     * Retourne le coté du carré
+     * @return le coté du carré
+     */
     public int getCote() {
         return cote;
     }
 
+    /**
+     * Retourne vrai si le carré est valide
+     * @param cote coté du carré à valider
+     * @return vrai si le côté du carré reçu en argument est entre DIM_MIN et DIM_MAX inclusivement
+     */
     public static boolean coteEstValide(int cote) {
         return (DIM_MIN <= cote && cote <= DIM_MAX);
     }
