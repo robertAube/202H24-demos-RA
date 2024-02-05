@@ -1,0 +1,225 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <title>Coverage Report > Carre</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">forme</a>
+</div>
+
+<h1>Coverage Summary for Class: Carre (forme)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">Carre</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    60%
+  </span>
+  <span class="absValue">
+    (6/10)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    52,9%
+  </span>
+  <span class="absValue">
+    (9/17)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package forme;
+&nbsp;
+&nbsp;/**
+&nbsp; * Carré décrit par son côté.
+&nbsp; * @author Robert Aubé
+&nbsp; * @version V1.1
+&nbsp; */
+&nbsp;public class Carre {
+&nbsp;    /**
+&nbsp;     * La valeur par défaut du côté d&#39;un carré
+&nbsp;     */
+&nbsp;    public static final int COTE_DEFAUT = 1;
+&nbsp;    /**
+&nbsp;     * La valeur minimum d&#39;un carré accepté
+&nbsp;     */
+&nbsp;    public static final int DIM_MIN = 0;
+&nbsp;
+&nbsp;    /**
+&nbsp;     * La valeur maximum d&#39;un carré accepté
+&nbsp;     */
+&nbsp;    public static final int DIM_MAX = 20;
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Coté d&#39;un carré
+&nbsp;     */
+&nbsp;    private int cote;
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Constructeur par défaut
+&nbsp;     */
+&nbsp;    public Carre() {
+<b class="nc">&nbsp;        this(COTE_DEFAUT);</b>
+&nbsp;    }
+&nbsp;
+&nbsp;//    /**
+&nbsp;//     * Constructeur pour un carré dont on spécifie la longueur du côté
+&nbsp;//     * @param cote longueur du côté. Doit être entre DIM_MIN et DIM_MAX
+&nbsp;//     */
+&nbsp;
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Constructeur pour un carré dont on spécifie la longueur du côté
+&nbsp;     * @param cote longueur du côté. Doit être entre DIM_MIN et DIM_MAX
+&nbsp;     */
+<b class="fc">&nbsp;    public Carre(int cote) {</b>
+<b class="fc">&nbsp;        setCote(cote);</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Modifie le côté du carré
+&nbsp;     *
+&nbsp;     * @param cote la dimension du nouveau coté
+&nbsp;     */
+&nbsp;    public void setCote(int cote) {
+<b class="fc">&nbsp;        if (coteEstValide(cote))</b>
+<b class="fc">&nbsp;            this.cote = cote;</b>
+&nbsp;        else
+<b class="fc">&nbsp;            throw new IllegalArgumentException(cote + &quot; n&#39;est pas entre &quot; + DIM_MIN + &quot; et &quot; + DIM_MAX + &quot;.&quot;);</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Retourne le coté du carré
+&nbsp;     * @return le coté du carré
+&nbsp;     */
+&nbsp;    public int getCote() {
+<b class="fc">&nbsp;        return cote;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Retourne vrai si le carré est valide
+&nbsp;     * @param cote coté du carré à valider
+&nbsp;     * @return vrai si le côté du carré reçu en argument est entre DIM_MIN et DIM_MAX inclusivement
+&nbsp;     */
+&nbsp;    public static boolean coteEstValide(int cote) {
+<b class="fc">&nbsp;        return (DIM_MIN &lt;= cote &amp;&amp; cote &lt;= DIM_MAX);</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Retourne la surface du carré
+&nbsp;     *
+&nbsp;     * @return la surface
+&nbsp;     */
+&nbsp;    public double getSurface() {
+<b class="fc">&nbsp;        return (Math.pow(cote, 2));</b>
+&nbsp;    }
+&nbsp;
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Retourne vrai si le carré courant est plus petit que le carré reçu en argument
+&nbsp;     * @param c Un carré quelconque
+&nbsp;     * @return vrai si le carré courant est plus petit que le carré reçu en argument
+&nbsp;     */
+&nbsp;    public boolean estPlusPetit(Carre c) {
+<b class="nc">&nbsp;        return this.cote &lt; c.cote;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    /**
+&nbsp;     * Retourne vrai si le carré courant est plus petit que le carré reçu en argument
+&nbsp;     * @param c Un carré quelconque
+&nbsp;     * @return vrai si le carré courant est plus petit que le carré reçu en argument
+&nbsp;     */
+&nbsp;    public boolean estPlusGrand(Carre c) {
+<b class="fc">&nbsp;        return this.cote &gt; c.cote;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;
+&nbsp;    @Override
+&nbsp;    public boolean equals(Object o) {
+<b class="nc">&nbsp;        if (this == o) return true;</b>
+<b class="nc">&nbsp;        if (o == null || getClass() != o.getClass()) return false;</b>
+&nbsp;
+<b class="nc">&nbsp;        Carre carre = (Carre) o;</b>
+&nbsp;
+<b class="nc">&nbsp;        return cote == carre.cote;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public String toString() {
+<b class="nc">&nbsp;        return ( getClass().getSimpleName()</b>
+&nbsp;                + &quot; Dimension : &quot; + cote + &quot; x &quot; + cote
+<b class="nc">&nbsp;                + &quot; Surface : &quot; + getSurface());</b>
+&nbsp;    }
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2024-02-05 12:38</div>
+</div>
+</body>
+</html>
