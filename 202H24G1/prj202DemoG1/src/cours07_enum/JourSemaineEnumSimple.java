@@ -1,5 +1,5 @@
 package cours07_enum;
 
-public enum JourSemaine { //type énumération
-    LUNDI, MARDI, MERCREDI, JEUDI, VENDREDI, SAMEDI, DIMANCHE;
+public enum JourSemaineEnumSimple { //type énumération
+    LUNDI, MARDI, MERCREDI, JEUDI, VENDREDI, SAMEDI, DIMANCHE; //norme: on emploie des majuscules
 }

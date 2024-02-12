@@ -1,4 +1,4 @@
-package cours06_enumEnrichi;
+package cours07_enum;
 
 public enum Planete {
     MERCURE(3.303e+23, 2.4397e6),
