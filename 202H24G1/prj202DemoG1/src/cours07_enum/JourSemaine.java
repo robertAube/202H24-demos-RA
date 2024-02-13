@@ -1,7 +1,7 @@
 package cours07_enum;
 
 public enum JourSemaine {
-    LUNDI("Monday", true), MARDI ("Tuesday", true), MERCREDI ("Wednesday", true), JEUDI ("Thursday", true), VENDREDI("Friday", true), SAMEDI("Saturday", true), DIMANCHE("Sunday", false);
+    LUNDI("Monday", true), MARDI ("Tuesday", true), MERCREDI ("Wednesday", true), JEUDI ("Thursday", true), VENDREDI("Friday", true), SAMEDI("Saturday", false), DIMANCHE("Sunday", false);
 
     private final String nomAnglais; //attribut final : une fois initialisé, ça ne change pas
     /**
