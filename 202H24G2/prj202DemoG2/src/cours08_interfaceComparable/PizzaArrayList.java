@@ -1,6 +1,7 @@
 package cours08_interfaceComparable;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 
 /**
  * @author Robert Aubé
@@ -32,10 +33,10 @@ public class PizzaArrayList {
     }
 
     public void trier() {
-
+        listPizza.sort(Comparator.naturalOrder());
     }
     public void trierInverser() {
-
+        listPizza.sort(Comparator.reverseOrder());
     }
 
     @Override
