@@ -11,7 +11,7 @@ import java.util.Comparator;
  */
 public class ListeEtudiants {
     ArrayList<Etudiant> listeEtudiants;
-    ArrayList<String> lignesFichier;
+    ArrayList<String> strLignesFichier;
 
     public ListeEtudiants() {
         listeEtudiants = new ArrayList<>();
@@ -30,11 +30,11 @@ public class ListeEtudiants {
      */
     public void lireEtudiants(String nomFichier) {
         Etudiant etudiant;
-        lignesFichier = new ArrayList<>();
+        strLignesFichier = new ArrayList<>();
         for (String ligne : GestionFichier.lireFichier(nomFichier)) {
             etudiant = getEtudiantFromLigne(ligne);
             if (etudiant != null) {
-                lignesFichier.add(ligne);
+                strLignesFichier.add(ligne);
                 listeEtudiants.add(etudiant);
             } else {
                 System.out.println("ligne invalide : " + ligne);
@@ -73,7 +73,21 @@ public class ListeEtudiants {
     }
 
     public void trier() {
-        lignesFichier.sort(Comparator.naturalOrder());
+
+        listeEtudiants.sort(Comparator.naturalOrder());
+        System.out.println("Trier:");
+        for (Etudiant etudiant : listeEtudiants) {
+            System.out.println(etudiant);
+        }
+    }
+
+    public void trierOld() {
+
+        strLignesFichier.sort(Comparator.naturalOrder());
+        System.out.println("Trier:");
+        for (String ligne : strLignesFichier) {
+            System.out.println(ligne);
+        }
     }
 
     @Override

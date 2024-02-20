@@ -14,10 +14,10 @@ public class FichierTexte {
        // ecrireDansUnFichier("test.txt", "bla bla bla" + LINE_SEPARATOR + "test");
        // System.out.println(lireTexteDansUnFichier("test.txt"));
 
-       // tester_lectureAvecArrayList();
+       tester_lectureAvecArrayList();
 
 
-        System.out.println(motsDansUneString("Tirer son chapeau à quelqu’un"));
+//        System.out.println(motsDansUneString("Tirer son chapeau à quelqu’un"));
     }
 
     private String motsDansUneString(String mots) {

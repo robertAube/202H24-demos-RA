@@ -61,11 +61,8 @@ public class Pizza implements Comparable<Pizza> {
     }
 
     public void setXY(Coordonnee newPosition) {
-        if (newPosition != null) {
-            position = newPosition;
-        } else {
-            throw new NullPointerException("La coordonnée n'est pas une instance");
-        }
+        assert position == null : "Erreur";
+        position = newPosition;
     }
 
     public static boolean estValideXY(int x, int y) {

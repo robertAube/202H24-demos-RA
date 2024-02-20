@@ -6,7 +6,7 @@ import java.util.regex.Pattern;
  * @author Robert Aubé
  * @version 1.0
  */
-public class Etudiant {
+public class Etudiant implements Comparable<Etudiant> {
     public static final int LGR_NODA = 7;
     public static final int NOTE_MIN = 0;
     public static final int NOTE_MAX = 100;
@@ -20,6 +20,34 @@ public class Etudiant {
         setNom(nom);
         setNote(note);
     }
+
+    /**
+     * Compares this object with the specified object for order.  Returns a
+     * negative integer, zero, or a positive integer as this object is less
+     * than, equal to, or greater than the specified object.
+     */
+    public int compareTo(Etudiant etudiant) {
+        int valeurComparaison;
+//        valeurComparaison = compareToParNom(etudiant);
+        valeurComparaison = compareToParNote(etudiant);
+
+        return valeurComparaison;
+    }
+
+    private int compareToParNote(Etudiant etudiant) {
+        int valeurComparaison;
+        valeurComparaison = (int) (note - etudiant.note);
+
+        return valeurComparaison;
+    }
+
+    private int compareToParNom(Etudiant etudiant) {
+        int valeurComparaison;
+        valeurComparaison = nom.compareTo(etudiant.nom);
+
+        return valeurComparaison;
+    }
+
 
     public Etudiant(String noDA, String nom, String note) {
         this(noDA, nom, Float.parseFloat(note));

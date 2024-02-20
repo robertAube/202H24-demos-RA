@@ -17,6 +17,9 @@ public class TestAssertion {
         System.out.println("p1 = " + p1);
         System.out.println("c1 = " + c1);
 
+        p1.setXY(c1);
+        p1.setXY(cNull);
+
         System.out.println("p1 = " + p1);
 
     }
