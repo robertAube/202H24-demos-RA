@@ -61,7 +61,9 @@ public class Pizza implements Comparable<Pizza> {
     }
 
     public void setXY(Coordonnee newPosition) {
-        assert position == null : "Erreur";
+        System.out.println("newPosition : " + newPosition);
+        assert newPosition != null : "Erreur";
+        System.out.println("newPosition est accepté : " + newPosition);
         position = newPosition;
     }
 
