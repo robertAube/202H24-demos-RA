@@ -61,7 +61,6 @@ public class Pizza implements Comparable<Pizza> {
     }
 
 
-    //TODO Faire une autre méthode
     public void setXY(Coordonnee newPosition) {
         assert newPosition != null : "Erreur la newPosition ne doit pas être null";
         position = newPosition;
