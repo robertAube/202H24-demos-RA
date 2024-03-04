@@ -17,10 +17,9 @@ public class TestComparable {
 
     /**
      * Tester si la méthode compareTo fonctionne
-     *
-     * @param args
+     * @param v1
+     * @param v2
      */
-
     public static void testerComparable(Comparable v1, Comparable v2) {
         int comparation = v1.compareTo(v2);
         if (comparation == 0) {
