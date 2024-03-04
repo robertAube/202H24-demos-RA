@@ -15,7 +15,7 @@ public class AppCloneContenant {
 
     private void clonerPipette() {
         System.out.println("clonerPipette()");
-        ContenantLiquide pipette1 = new ContenantLiquide("pipete1", eau, 150, 100);
+        ContenantLiquide pipette1 = new ContenantLiquide("pipette1", eau, 150, 100);
         ContenantLiquide pipette2 = null;
         System.out.println("pipette1 : " + pipette1);
 
@@ -35,7 +35,7 @@ public class AppCloneContenant {
 
     private void sansVraimentCloner() {
         System.out.println("sansVraimentCloner()");
-        ContenantLiquide pipette1 = new ContenantLiquide("pipete1", eau, 150, 100);
+        ContenantLiquide pipette1 = new ContenantLiquide("pipette1", eau, 150, 100);
         ContenantLiquide pipette2;
         System.out.println("pipette1 : " + pipette1);
         pipette2 = pipette1;

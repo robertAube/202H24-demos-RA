@@ -1,4 +1,4 @@
-package cours12_ExceptionsSuite;
+package cours13_exceptionsSuite;
 
 /*
 420-202 – Traitement de données orienté objet
