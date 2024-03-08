@@ -7,10 +7,14 @@ public class AppClonePizza {
     private Pizza p1;
     private Pizza p2;
     public AppClonePizza() {
-        testerClonerPizza();
+        try {
+            testerClonerPizza();
+        } catch (CloneNotSupportedException e) {
+            throw new RuntimeException(e);
+        }
     }
 
-    private void testerClonerPizza() {
+    private void testerClonerPizza() throws CloneNotSupportedException {
         System.out.println("testerClonerPizza()");
 
         p1 = new Pizza(1,2,"rouge", 3);
@@ -19,7 +23,8 @@ public class AppClonePizza {
 
         //todo cloner p1 dans pizza p2
         System.out.println("On clone : ");
-        p2 = p1;
+        p2 = p1.clonerSurface();
+        p2 = p1.clonerProfondeur();
 
         p2.setAll(3,4,"bleu", 5);
 

@@ -3,7 +3,7 @@ package cours14_cloneEnProfondeur;
  * @author Robert Aubé
  * @version 1.0
  */
-public class Coordonnee {
+public class Coordonnee implements Cloneable {
     public static final int MIN_XY = 0;
     public static final int MAX_XY = Integer.MAX_VALUE;
 
@@ -77,5 +77,10 @@ public class Coordonnee {
 
         if (x != that.x) return false;
         return y == that.y;
+    }
+
+    public Coordonnee cloner() throws CloneNotSupportedException {
+        Coordonnee clone = (Coordonnee) this.clone();
+        return clone;
     }
 }

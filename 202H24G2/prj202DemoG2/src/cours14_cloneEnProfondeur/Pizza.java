@@ -4,7 +4,7 @@ package cours14_cloneEnProfondeur;
  * @author Robert Aubé
  * @version 1.0
  */
-public class Pizza implements Comparable<Pizza> {
+public class Pizza implements Comparable<Pizza>, Cloneable {
     public static final int VITESSE_MIN = 0;
     public static final int VITESSE_MAX = 50;
 
@@ -128,5 +128,16 @@ public class Pizza implements Comparable<Pizza> {
         int difference = vitesse - pizza.vitesse;
 
         return difference;
+    }
+
+    public Pizza clonerSurface() throws CloneNotSupportedException {
+        Pizza clone = (Pizza)this.clone();
+        return clone;
+    }
+
+    public Pizza clonerProfondeur() throws CloneNotSupportedException {
+        Pizza clone = (Pizza)this.clone();
+        clone.position = position.cloner();
+        return clone;
     }
 }
