@@ -31,7 +31,7 @@ public class ListeEtudiants {
     public void lireEtudiants(String nomFichier) {
         Etudiant etudiant;
         strLignesFichier = new ArrayList<>();
-        for (String ligne : GestionFichier.lireFichier(nomFichier)) {
+        for (String ligne : GestionFichier.lireFichierTxtToArrayList(nomFichier)) {
             etudiant = getEtudiantFromLigne(ligne);
             if (etudiant != null) {
                 strLignesFichier.add(ligne);

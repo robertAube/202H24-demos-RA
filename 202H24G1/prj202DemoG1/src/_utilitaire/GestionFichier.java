@@ -13,47 +13,101 @@ public class GestionFichier {
     public static final String LINE_SEPARATOR = System.getProperty("line.separator"); // Séparateur de ligne du système d'exploitation. Windows "\r\n", sous Unix "\n", MasOX "\r"
 
     /**
-     * ÉCrit un fichier texte dans nomFichier
-     * @param nomFichier nom du fichier
+     * Écrit un fichier texte dans nomFichier
+     *
+     * @param nomFichier     nom du fichier
      * @param contenuFichier contenu du fichier
      */
     public static void ecrireFichierTexte(String nomFichier, String contenuFichier) {
+        BufferedWriter bufferedWriter = null;
+
         try {
-            PrintWriter sortie = new PrintWriter(new FileWriter(nomFichier)); // ouverture du fichier
-            sortie.print(contenuFichier); //écrire le texte
-            sortie.flush(); //forcer l'écriture du buffer (à faire besoin)
-            sortie.close(); //fermer le fichier
-        } catch (IOException ioException) {
-            System.out.println(ioException.getMessage());
+            bufferedWriter = new BufferedWriter(new FileWriter(nomFichier));
+            bufferedWriter.write(contenuFichier);
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            if (bufferedWriter != null) {
+                try {
+                    bufferedWriter.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
         }
     }
 
     /**
-     * Lit un fichier texte dans nomFichier
+     * Lit un fichier texte nomFichier et le place dans un ArrayList
+     *
      * @param nomFichier nom du fichier
+     * @return un ArrayList où chaque ligne du fichier est placé en ordre dans chaque élément de l'ArrayList
      */
-    public static ArrayList<String> lireFichier(String nomFichier) {
+    public static ArrayList<String> lireFichierTxtToArrayList(String nomFichier) {
         String ligne;
-        ArrayList<String> temp = new ArrayList();
+        ArrayList<String> arrayList = new ArrayList();
+        BufferedReader entree = null;
 
         try {
-            BufferedReader entree = new BufferedReader(new FileReader(nomFichier));
+            entree = new BufferedReader(new FileReader(nomFichier));
             ligne = entree.readLine();
             while (ligne != null) {
-                temp.add(ligne);
+                arrayList.add(ligne);
                 ligne = entree.readLine();
             }
-            entree.close();
         } catch (IOException e) {
-            System.out.println(e);
+            e.printStackTrace();
+        } finally {
+            if (entree != null) {
+                try {
+                    entree.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
         }
-        return (temp);
+    }
+
+    /**
+     * Lit un fichier texte dont le nom est nomFichier et le retourne dans une String
+     *
+     * @param nomFichier nom du fichier
+     * @return un ArrayList où chaque ligne du fichier est placé en ordre dans chaque élément de l'ArrayList
+     */
+    public static String lireFichierTxt(String nomFichier) {
+        String ligne;
+        /*
+
+         */
+        StringBuilder stringBuilder = new StringBuilder();
+        BufferedReader entree = null;
+
+        try {
+            entree = new BufferedReader(new FileReader(nomFichier));
+            ligne = entree.readLine();
+            while (ligne != null) {
+                stringBuilder.append(ligne);
+                ligne = entree.readLine();
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            if (entree != null) {
+                try {
+                    entree.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+        return stringBuilder.toString();
     }
 
     /**
      * Écrit un fichier texte dans nomFichier.
      * Pour chaque Objet de l'ArrayList, on appelle le toString() et on l'ajoute à une ligne du fichier
-     * @param lignes contenu du fichier. Chaque élément de lignes
+     *
+     * @param lignes     contenu du fichier. Chaque élément de lignes
      * @param nomFichier nom du fichier
      */
     public static void ecrireFichier(ArrayList<Object> lignes, String nomFichier) {
