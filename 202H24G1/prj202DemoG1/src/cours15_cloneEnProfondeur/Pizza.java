@@ -4,7 +4,7 @@ package cours15_cloneEnProfondeur;
  * @author Robert Aubé
  * @version 1.0
  */
-public class Pizza implements Comparable<Pizza> {
+public class Pizza implements Comparable<Pizza>, Cloneable {
     public static final int VITESSE_MIN = 0;
     public static final int VITESSE_MAX = 50;
 
@@ -16,6 +16,13 @@ public class Pizza implements Comparable<Pizza> {
         position = new Coordonnee(x, y);
         setAll(x, y, couleur, vitesse);
     }
+
+    public Pizza clonerSurface() throws CloneNotSupportedException {
+        Pizza clone = (Pizza) this.clone();
+        clone.position = position.cloner();
+        return clone;
+    }
+
 
     //mutateurs
     public void setAll(int x, int y, String couleur, int vitesse) {

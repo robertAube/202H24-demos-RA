@@ -23,7 +23,7 @@ public class AppClonePizza {
 
         //todo cloner p1 dans pizza p2
         System.out.println("On clone : ");
-        p2 = p1; //Remplacer cette ligne pour réellement cloner une pizza
+        p2 = p1.clonerSurface(); //Remplacer cette ligne pour réellement cloner une pizza
 
         p2.setAll(3,4,"bleu", 5);
 
