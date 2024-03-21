@@ -1,11 +1,13 @@
-package cours15_gestionFichiers;
+package cours16_gestionFichiers;
 
+
+import java.io.Serializable;
 
 /**
  * Clonage profond.
  * @version 1.0 (Date de création: 2024-03-10)
  */
-public class Liquide implements Cloneable {
+public class Liquide implements Cloneable, Serializable {
     private String nom; //lait (1030), eau (1000), essence (750), Mercure(13600)
     private int masseVolumique_KgParM3;
 

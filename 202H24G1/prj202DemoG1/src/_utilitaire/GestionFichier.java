@@ -121,4 +121,19 @@ public class GestionFichier {
         return arrayList;
     }
 
+    public static void afficher(String[] tabInt) {
+        System.out.print('{');
+        for (int i = 0; i < tabInt.length; i++) {
+            System.out.print(tabInt[i] + ((tabInt.length - 1 == i) ? "" : ", ")); // lire la valeur à l'index i
+        }
+        System.out.println('}');
+    }
+
+    public static void afficher(File[] files) {
+        System.out.print('{');
+        for (int i = 0; i < files.length; i++) {
+            System.out.print(files[i] + ((files.length - 1 == i) ? "" : ", ")); // lire la valeur à l'index i
+        }
+        System.out.println('}');
+    }
 }
