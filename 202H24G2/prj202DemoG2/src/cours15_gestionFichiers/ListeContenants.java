@@ -1,8 +1,9 @@
 package cours15_gestionFichiers;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class ListeContenants  {
+public class ListeContenants implements Serializable {
     private ArrayList<ContenantLiquide> listeContenant;
 
     public ListeContenants() {

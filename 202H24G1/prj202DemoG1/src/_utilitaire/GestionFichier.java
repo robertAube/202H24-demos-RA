@@ -132,7 +132,7 @@ public class GestionFichier {
     public static void afficher(File[] files) {
         System.out.print('{');
         for (int i = 0; i < files.length; i++) {
-            System.out.print(files[i] + ((files.length - 1 == i) ? "" : ", ")); // lire la valeur à l'index i
+            System.out.print(files[i].getName() + ((files.length - 1 == i) ? "" : ", ")); // lire la valeur à l'index i
         }
         System.out.println('}');
     }

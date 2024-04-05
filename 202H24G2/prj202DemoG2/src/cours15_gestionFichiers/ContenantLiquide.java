@@ -1,7 +1,9 @@
 package cours15_gestionFichiers;
 
 
-public class ContenantLiquide implements Cloneable {
+import java.io.Serializable;
+
+public class ContenantLiquide implements Cloneable, Serializable {
     private String nom; //Bécher, Erlenmeyer, Éprouvette, Compte-Goutte, Pipette... (verrerie en chimie)
 
     private int capaciteMl; //capacité du contenant en millilitre

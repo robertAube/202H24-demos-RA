@@ -1,7 +1,8 @@
-package cours15_gestionFichiers;
+package cours18_hash;
 
 
 import java.io.Serializable;
+import java.util.Objects;
 
 /**
  * Clonage profond.
@@ -14,6 +15,19 @@ public class Liquide implements Cloneable, Serializable {
     public Liquide(String nom, int masseVolumique_KgParM3) {
         this.nom = nom;
         this.masseVolumique_KgParM3 = masseVolumique_KgParM3;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Liquide liquide = (Liquide) o;
+        return masseVolumique_KgParM3 == liquide.masseVolumique_KgParM3 && Objects.equals(nom, liquide.nom);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(nom, masseVolumique_KgParM3);
     }
 
     public void setNom(String nom) {
