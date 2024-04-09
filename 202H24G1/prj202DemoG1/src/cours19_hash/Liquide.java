@@ -1,8 +1,7 @@
-package cours18_hash;
+package cours19_hash;
 
 
 import java.io.Serializable;
-import java.util.ArrayList;
 import java.util.Objects;
 
 /**
@@ -11,7 +10,6 @@ import java.util.Objects;
  */
 public class Liquide implements Cloneable, Serializable {
     private String nom; //lait (1030), eau (1000), essence (750), Mercure(13600)
-    private ArrayList l;
     private int masseVolumique_KgParM3;
 
     public Liquide(String nom, int masseVolumique_KgParM3) {
@@ -23,11 +21,8 @@ public class Liquide implements Cloneable, Serializable {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-
         Liquide liquide = (Liquide) o;
-
-        if (masseVolumique_KgParM3 != liquide.masseVolumique_KgParM3) return false;
-        return Objects.equals(nom, liquide.nom);
+        return masseVolumique_KgParM3 == liquide.masseVolumique_KgParM3 && Objects.equals(nom, liquide.nom);
     }
 
     @Override
