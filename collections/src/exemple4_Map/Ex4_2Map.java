@@ -8,7 +8,7 @@ import java.util.*;
  * - map foreach
  * - méthodes sur Entry : getKey(), getValue(), setValue()
  */
-public class Ex4_1Map {
+public class Ex4_2Map {
     private String[] tabContenu = {"À bon chat, bon rat.", "Appeler un chat un chat.", "La nuit, tous les chats sont gris."};
     private Map<String, Integer>[] tabMap = new Map[]{
             new TreeMap<>(), //ordonné par clé
@@ -17,7 +17,7 @@ public class Ex4_1Map {
     };
     private Map<String, Integer> map;
 
-    public Ex4_1Map() {
+    public Ex4_2Map() {
         for (Map<String, Integer> m: tabMap) {
             map = m;
             renseignerMap();
@@ -72,7 +72,7 @@ public class Ex4_1Map {
     }
     private void parcourirMap_entrySetIterator() {
         System.out.println("parcourirMap_entrySetIterator()");
-        Iterator entryIterator = map.entrySet().iterator();
+        Iterator entryIterator = map.entrySet().iterator(); //récupère le set des clés de le Map puis retourne un itérateur sur le set
         while (entryIterator.hasNext()) {
             Map.Entry<String, Integer> entry = (Map.Entry) entryIterator.next();
             System.out.println(entry.getKey() + " -> " + entry.getValue());
@@ -81,7 +81,7 @@ public class Ex4_1Map {
 
     private void parcourirMap_foreach_entrySet() {
         System.out.println("parcourirMap_foreach_entrySet()");
-        for (Map.Entry<String, Integer> entry : map.entrySet()) {  //map.entrySet(), retroune un ensemble d'entrée dont la clé est associé à une valeur.
+        for (Map.Entry<String, Integer> entry : map.entrySet()) {  //map.entrySet(), retourne un ensemble d'entrée dont la clé est associée à une valeur.
             System.out.println(entry.getKey() + " -> " + entry.getValue());
         }
     }
@@ -92,7 +92,7 @@ public class Ex4_1Map {
         }
     }
     public static void main(String[] args) {
-        new Ex4_1Map();
+        new Ex4_2Map();
     }
 }
 /**

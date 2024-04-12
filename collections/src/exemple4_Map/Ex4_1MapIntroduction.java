@@ -5,7 +5,7 @@ import java.util.*;
 /**
  *
  */
-public class Ex4_2MapAutresExemples {
+public class Ex4_1MapIntroduction {
     private Map<String, Integer>[] tabMap = new Map[]{
             new TreeMap<>(), //ordonné par clé
             new HashMap<>(), //sans ordre
@@ -14,7 +14,7 @@ public class Ex4_2MapAutresExemples {
     private Map<String, Integer> map;
     Iterator<Map.Entry<String, Integer>> iter;
 
-    public Ex4_2MapAutresExemples() {
+    public Ex4_1MapIntroduction() {
         for (Map<String, Integer> m : tabMap) {
             map = m;
             peupler();
@@ -92,6 +92,6 @@ public class Ex4_2MapAutresExemples {
     }
 
     public static void main(String args[]) {
-        new Ex4_2MapAutresExemples();
+        new Ex4_1MapIntroduction();
     }
 }
