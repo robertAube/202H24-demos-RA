@@ -41,6 +41,9 @@ public class Ex5_1DemoSet {
         String strAjoute = "";
         String strDejaPresent = "";
 
+        //Utilisation de Arrays.toString() pour afficher le tableau
+        System.out.println("On assaie de peupler le " + set.getClass().getSimpleName() +" avec: " + Arrays.toString(tab));
+
         for (int elementTab : tab) {
             estAjoute = set.add(elementTab);
 
