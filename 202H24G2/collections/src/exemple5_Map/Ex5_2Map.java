@@ -1,4 +1,4 @@
-package exemple4_Map;
+package exemple5_Map;
 
 import java.util.*;
 
@@ -8,7 +8,7 @@ import java.util.*;
  * - map foreach
  * - méthodes sur Entry : getKey(), getValue(), setValue()
  */
-public class Ex4_2Map {
+public class Ex5_2Map {
     private String[] tabContenu = {"À bon chat, bon rat.", "Appeler un chat un chat.", "La nuit, tous les chats sont gris."};
     private Map<String, Integer>[] tabMap = new Map[]{
             new TreeMap<>(), //ordonné par clé
@@ -17,7 +17,7 @@ public class Ex4_2Map {
     };
     private Map<String, Integer> map;
 
-    public Ex4_2Map() {
+    public Ex5_2Map() {
         for (Map<String, Integer> m: tabMap) {
             map = m;
             renseignerMap();
@@ -39,7 +39,7 @@ public class Ex4_2Map {
         tabMot = phrase.split("\s+"); //séparateur du split: espace(\s) de 1 à n fois(+)
 
         for (String mot : tabMot) {
-            value = map.get(mot); //répurer la velur du mot. Retgourne null si le mot n'Existe pas.
+            value = map.get(mot); //Récupérer la valeur du mot. Retourne null si le mot n'Existe pas.
             if (value == null) //ne contient pas la clé
             { //L'entrée <k, v> est ajouté.
                 map.put(mot, 1); //comme la clé (ou le mot) n'existe pas, le put ajoute
@@ -48,6 +48,12 @@ public class Ex4_2Map {
             }
         }
     }
+
+    /**
+     * Transformer la phrase ne liste de mots
+     * @param phrase
+     * @return
+     */
     private String nettoyerPhrase(String phrase) {
         String strPhraseRetour;
         strPhraseRetour = phrase.replace(',', ' ');
@@ -92,7 +98,7 @@ public class Ex4_2Map {
         }
     }
     public static void main(String[] args) {
-        new Ex4_2Map();
+        new Ex5_2Map();
     }
 }
 /**

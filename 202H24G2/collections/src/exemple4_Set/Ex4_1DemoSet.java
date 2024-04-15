@@ -1,4 +1,4 @@
-package exemple5_Set;
+package exemple4_Set;
 
 import java.util.*;
 
@@ -6,14 +6,14 @@ import java.util.*;
  * - Set : TreeSet & HashSet
  * - méthodes : add(), remove(), contains()
  */
-public class Ex5_1DemoSet {
+public class Ex4_1DemoSet {
     private Set<Integer>[] tabSet = new Set[]{
         new TreeSet<>(), //ordonné par clé
         new HashSet<>() //sans ordre
     };
     private Set<Integer> set;
 
-    public Ex5_1DemoSet() {
+    public Ex4_1DemoSet() {
         for (Set<Integer> s: tabSet){
             set = s;
             System.out.println("########### " + set.getClass().getSimpleName());
@@ -62,7 +62,7 @@ public class Ex5_1DemoSet {
     }
 
     public static void main(String args[]) {
-        new Ex5_1DemoSet();
+        new Ex4_1DemoSet();
     }
 }
 /**

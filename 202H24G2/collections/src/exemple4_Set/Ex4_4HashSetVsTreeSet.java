@@ -1,4 +1,4 @@
-package exemple5_Set;
+package exemple4_Set;
 
 import java.util.Arrays;
 import java.util.HashSet;
@@ -10,7 +10,7 @@ import java.util.TreeSet;
  * - opérateur : instanceof
  * - Méthodes : add()
  */
-public class Ex5_2HashSetVsTreeSet {
+public class Ex4_4HashSetVsTreeSet {
     Liquide [] tabLiquide = {
             new Liquide("huile de sésame", 920),
             new Liquide("huile d'olive", 920),
@@ -19,7 +19,7 @@ public class Ex5_2HashSetVsTreeSet {
             new Liquide("mercure", 13600),
             new Liquide("mercure", 13600),
     };
-    public Ex5_2HashSetVsTreeSet() {
+    public Ex4_4HashSetVsTreeSet() {
         System.out.println("HashSet : ");
         testSet(new HashSet<>(Arrays.asList(tabLiquide)));
         System.out.println("\nTreeSet : ");
@@ -41,7 +41,7 @@ public class Ex5_2HashSetVsTreeSet {
     }
 
     public static void main(String[] args) {
-        new Ex5_2HashSetVsTreeSet();
+        new Ex4_4HashSetVsTreeSet();
     }
 }
 /**
