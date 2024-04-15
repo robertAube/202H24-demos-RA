@@ -41,7 +41,7 @@ public class Ex5_0UnionIntersectionDifference {
 
     private void peuplerSet2() {
         // Création d'une liste d'entiers
-        List<Integer> list = Arrays.asList(1, 7, 6, 8, 9); //Méthode static de Arrays qui retourne une ArrayList avec ce qui est reçu en argument
+        List<Integer> list = Arrays.asList(1, 7, 6, 8, 9, 11); //Méthode static de Arrays qui retourne une ArrayList avec ce qui est reçu en argument
 
         // Création d'un ensemble set2 à partir de la liste
         set2 = new TreeSet<>(list);

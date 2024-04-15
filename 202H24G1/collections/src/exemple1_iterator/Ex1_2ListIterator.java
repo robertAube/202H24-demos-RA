@@ -9,13 +9,13 @@ import java.util.*;
  *   ++ hasPrevious(), previous(), set(), add()
  * - autre : list.getClass().getSimpleName()
  */
-public class Ex1_2VecteurBi {
+public class Ex1_2ListIterator {
     private List<Integer>[] tabList = new List[]{new ArrayList<>(), new LinkedList<>(), new Vector<>()};
 
     List<Integer> list;
     ListIterator<Integer> listIterator; //L'itérateur ListIterator bidirectionnel
 
-    public Ex1_2VecteurBi() {
+    public Ex1_2ListIterator() {
         for (List<Integer> l : tabList) {
             list = l;
             jouerAvecListe();
@@ -110,7 +110,7 @@ public class Ex1_2VecteurBi {
     }
 
     public static void main(String[] args) {
-        new Ex1_2VecteurBi();
+        new Ex1_2ListIterator();
     }
 
 }

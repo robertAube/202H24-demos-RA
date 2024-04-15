@@ -7,12 +7,12 @@ import java.util.*;
  * - méthodes d'un Iterator : hasNext(), next(), remove()
  * - autre : list.getClass().getSimpleName()
  */
-public class Ex1_1VecteurUni {
+public class Ex1_1Iterator {
     private List<Integer>[] tabList = new List[]{new ArrayList<>(), new LinkedList<>(), new Vector<>()};
 
     List<Integer> list;
 
-    public Ex1_1VecteurUni() {
+    public Ex1_1Iterator() {
         for (List<Integer> l : tabList) {
             list = l;
             peupler();
@@ -64,7 +64,7 @@ public class Ex1_1VecteurUni {
 
 
     public static void main(String[] args) {
-        Ex1_1VecteurUni vecteur = new Ex1_1VecteurUni();
+        Ex1_1Iterator vecteur = new Ex1_1Iterator();
 
     }
 
