@@ -1,11 +1,11 @@
-package exemple4_Map;
+package exemple5_Map;
 
 import java.util.*;
 
 /**
  *
  */
-public class Ex4_1MapIntroduction {
+public class Ex5_1MapIntroduction {
     private Map<String, Integer>[] tabMap = new Map[]{
             new TreeMap<>(), //ordonné par clé
             new HashMap<>(), //sans ordre
@@ -14,7 +14,7 @@ public class Ex4_1MapIntroduction {
     private Map<String, Integer> map;
     Iterator<Map.Entry<String, Integer>> iter;
 
-    public Ex4_1MapIntroduction() {
+    public Ex5_1MapIntroduction() {
         for (Map<String, Integer> m : tabMap) {
             map = m;
             peupler();
@@ -25,14 +25,14 @@ public class Ex4_1MapIntroduction {
 
     private void jouer() {
         // retrouver la valeur associée a la cle "f"
-        System.out.println("valeur associée à f : " + map.get("f"));
+        System.out.println("valeur associée à f : " + map.get("f")); //20
 
         // modification de la valeur associée a la clé x avec pur
         System.out.println("\nliste des valeurs avant modification de x : " + this);
         map.put("x", 75);
         System.out.println("liste des valeurs après modification de x : " + this + '\n');
 
-        // on supprime l'entrée par cle. Ici on supprime l'entrée "k"
+        // On supprime l'entrée par cle. Ici, on supprime l'entrée "k"
         System.out.println("map avant suppression de la clé k : " + this);
         // supprimer la valeur associée à la clé directement de la map
         // renvoie la valeur associée à la clé ou null si la clé est absente
@@ -92,6 +92,6 @@ public class Ex4_1MapIntroduction {
     }
 
     public static void main(String args[]) {
-        new Ex4_1MapIntroduction();
+        new Ex5_1MapIntroduction();
     }
 }

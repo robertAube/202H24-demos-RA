@@ -1,0 +1,29 @@
+exemple1_iterator
+    Ex1_1Iterator.java - ok
+    Ex1_2ListIterator.java - ok 
+    
+exemple2_List
+    Ex2_1Liste.java
+    Ex2_2ArrayVectorStack.java
+    Ex2_3ListParcourir.java
+    Ex2_4LinkedList.java
+    
+exemple3_hashCode
+    Liquide.java - ok
+    
+exemple4_Map
+    Ex4_1MapIntroduction.java - ok
+    Ex4_2Map.java - ok
+    
+exemple5_Set
+    Coordonnee.java
+    Ex5_0UnionIntersectionDifference.java - ok
+    Ex5_1DemoSet.java - ok
+    Ex5_2HashSetVsTreeSet.java
+    Ex5_3KillVoyelles.java - ok
+    Ex5_4AccesElements.java
+    Liquide.java
+    
+Exemple6_CollectionsEtArrays
+    Ex6_1DemoCollections.java
+    Ex6_2DemoArrays.java

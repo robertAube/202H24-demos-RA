@@ -1,4 +1,4 @@
-package exemple5_Set;
+package exemple4_Set;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -7,18 +7,17 @@ import java.util.TreeSet;
 /**
  * Retire les voyelles d'une phrase
  * - Set : TreeSet & HashSet
- * - opérateur : instanceof
  * - Méthodes : add(), removeAll()
  * - autre : String.replaceAll()
  */
-public class Ex5_3KillVoyelles {
+public class Ex4_3KillVoyelles {
     public static String VOYELLES = "aàeéèêëiouùy";
-    public static String PHRASE = "#34 23 mais ou et donc car ni or élève";
+    public static String PHRASE = "mais ou et donc car ni or élève. /$%?&";
 
     private Set<Character> setVoyelles;
     private Set<Character> setLettresPhrase;
 
-    public Ex5_3KillVoyelles(String phrase) {
+    public Ex4_3KillVoyelles(String phrase) {
         initSetsDesVoyelles();
         initSetsAvecLettresDeLaPhraseV1(phrase);
 //
@@ -34,34 +33,39 @@ public class Ex5_3KillVoyelles {
     }
 
     private void initSetsAvecLettresDeLaPhraseV1(String phrase) {
-        setLettresPhrase = new HashSet<>();
+        setLettresPhrase = new TreeSet<>();
         phrase = enleverCeQuiNEstPasUneLettre(phrase);
-        System.out.println(phrase);
         for (int i = 0; i < phrase.length(); i++) {
             setLettresPhrase.add(phrase.charAt(i));
         }
     }
-    private void initSetsAvecLettresDeLaPhraseV2(String phrase) {
-        char[] tableauDeLettres = phrase.toCharArray();
 
-        setLettresPhrase = new HashSet<>();
-        for (char lettre : tableauDeLettres) {
-            setLettresPhrase.add(lettre);
+    private void initSetsAvecLettresDeLaPhraseV2(String phrase) {
+        char[] tableauDeLettres;
+        setLettresPhrase = new TreeSet<>();
+
+        phrase = enleverCeQuiNEstPasUneLettre(phrase);
+        tableauDeLettres = phrase.toCharArray();
+        for (char c: tableauDeLettres) {
+            setLettresPhrase.add(c);
         }
     }
+
+    //optionnel
     private String enleverCeQuiNEstPasUneLettre(String phrase) {
-        return phrase.replaceAll("[^a-zA-Zàâéèêëîïôûù]", "");
+        phrase = phrase.replaceAll("[^a-zA-Zàâéèêëîïôûù]", "");
+        return phrase;
     }
 
     private void initSetsDesVoyelles() {
-        setVoyelles = new TreeSet<>();
+        setVoyelles = new HashSet<>();
         for (int i = 0; i < VOYELLES.length(); i++) {
             setVoyelles.add(VOYELLES.charAt(i));
         }
     }
 
     public static void main(String args[]) {
-        new Ex5_3KillVoyelles(PHRASE);
+        new Ex4_3KillVoyelles(PHRASE);
     }
 }
 

@@ -30,27 +30,15 @@ public class Ex5_3KillVoyelles {
     }
 
     private void effaceVoyelles() {
-        setLettresPhrase.removeAll(setVoyelles);
+        //todo
     }
 
     private void initSetsAvecLettresDeLaPhrase(String phrase) {
-        setLettresPhrase = new HashSet<>();
-        phrase = enleverCeQuiNEstPasUneLettre(phrase);
-        System.out.println(phrase);
-        for (int i = 0; i < phrase.length(); i++) {
-            setLettresPhrase.add(phrase.charAt(i));
-        }
-    }
-
-    private String enleverCeQuiNEstPasUneLettre(String phrase) {
-        return phrase.replaceAll("[^a-zA-Zàâéèêëîïôûù]", "");
+//todo
     }
 
     private void initSetsDesVoyelles() {
-        setVoyelles = new TreeSet<>();
-        for (int i = 0; i < VOYELLES.length(); i++) {
-            setVoyelles.add(VOYELLES.charAt(i));
-        }
+        //dodo
     }
 
     public static void main(String args[]) {

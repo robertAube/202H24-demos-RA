@@ -1,27 +1,27 @@
-package exemple5_Set;
+package exemple4_Set;
 
 import _utilitaire.Utilitaire;
 
 import java.util.*;
 
-public class Ex5_4AccesElements {
-    public static final int NB_ELEMENT = 1000000;
+public class Ex5_5AccesElements {
+    public static final int NB_COORDONNEES = 1000000;
     public static final int NB_DE_GET = 50;
     private Set<Coordonnee>[] tabSet = new Set[]{
             new TreeSet<>(), //ordonné par clé
             new HashSet<>(), //sans ordre
-            new LinkedHashSet<>()
+            new LinkedHashSet<>() //
     };
 
     private Set<Coordonnee> setCoodonnees;
     private List<Coordonnee> listeDeCoordonnees;
     int nbDEchecDAjoutAuSet;
 
-    public Ex5_4AccesElements() {
+    public Ex5_5AccesElements() {
         long start, tempsMilli;
         String strNomSet;
 
-        remplirLArrayDeCoordonneesAletoire(NB_ELEMENT);
+        remplirLArrayDeCoordonneesAletoire(NB_COORDONNEES);
 
         for (Set<Coordonnee> s : tabSet) {
             setCoodonnees = s;
@@ -90,6 +90,6 @@ public class Ex5_4AccesElements {
     }
 
     public static void main(String[] args) {
-        new Ex5_4AccesElements();
+        new Ex5_5AccesElements();
     }
 }

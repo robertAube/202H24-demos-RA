@@ -1,11 +1,11 @@
-package exemple5_Set;
+package exemple4_Set;
 
 import java.util.*;
 
-public class Ex5_0UnionIntersectionDifference {
+public class Ex4_2UnionIntersectionDifference {
     private Set<Integer> set1;
     private Set<Integer> set2;
-    public Ex5_0UnionIntersectionDifference() {
+    public Ex4_2UnionIntersectionDifference() {
         peuplerSet1();
         peuplerSet2();
 
@@ -49,6 +49,6 @@ public class Ex5_0UnionIntersectionDifference {
     }
 
     public static void main(String[] args) {
-        new Ex5_0UnionIntersectionDifference();
+        new Ex4_2UnionIntersectionDifference();
     }
 }

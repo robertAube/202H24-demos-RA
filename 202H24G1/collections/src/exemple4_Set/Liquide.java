@@ -1,4 +1,4 @@
-package exemple5_Set;
+package exemple4_Set;
 
 public class Liquide implements Comparable<Liquide> //Type générique
 {
