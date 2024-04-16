@@ -1,29 +1,54 @@
-exemple1_iterator
-    Ex1_1Iterator.java - ok
-    Ex1_2ListIterator.java - ok 
-    
-exemple2_List
-    Ex2_1Liste.java
-    Ex2_2ArrayVectorStack.java
-    Ex2_3ListParcourir.java
-    Ex2_4LinkedList.java
-    
-exemple3_hashCode
-    Liquide.java - ok
-    
-exemple4_Map
-    Ex4_1MapIntroduction.java - ok
-    Ex4_2Map.java - ok
-    
-exemple5_Set
-    Coordonnee.java
-    Ex5_0UnionIntersectionDifference.java - ok
-    Ex5_1DemoSet.java - ok
-    Ex5_2HashSetVsTreeSet.java
-    Ex5_3KillVoyelles.java - ok
-    Ex5_4AccesElements.java
-    Liquide.java
-    
-Exemple6_CollectionsEtArrays
-    Ex6_1DemoCollections.java
-    Ex6_2DemoArrays.java
+Structure du dossier
+Le num‚ro de s‚rie du volume est C04F-C8B4
+Q:.
+³   contenu.txt
+³   
+ÃÄÄÄexemple1_iterator
+³       Ex1_1Iterator.java
+³       Ex1_2ListIterator.java
+³       
+ÃÄÄÄexemple2_List
+³       Ex2_1Liste.java
+³       Ex2_2ArrayVectorStack.java
+³       Ex2_3ListParcourir.java
+³       Ex2_4LinkedList.java
+³       
+ÃÄÄÄexemple3_hashCode
+³       Liquide.java
+³       
+ÃÄÄÄexemple4_Set
+³       Coordonnee.java
+³       Ex4_1DemoSet.java
+³       Ex4_2UnionIntersectionDifference.java
+³       Ex4_3KillVoyelles.java
+³       Ex4_4HashSetVsTreeSet.java
+³       Ex5_5AccesElements.java
+³       Liquide.java
+³       
+ÃÄÄÄexemple5_Map
+³       Ex5_1MapIntroduction.java
+³       Ex5_2Map.java
+³       
+ÃÄÄÄExemple6_CollectionsEtArrays
+³       Ex6_1DemoCollections.java
+³       Ex6_2DemoArrays.java
+³       
+ÃÄÄÄ_collection
+³       AbstractCollection.java
+³       AbstractList.java
+³       AbstractSequentialList.java
+³       ArrayList.java
+³       Collection.java
+³       Iterable.java
+³       Iterator.java
+³       LinkedList.java
+³       List.java
+³       ListIterator.java
+³       Map.java
+³       Set.java
+³       _Test.java
+³       
+ÀÄÄÄ_utilitaire
+        GestionFichier.java
+        Utilitaire.java
+        
