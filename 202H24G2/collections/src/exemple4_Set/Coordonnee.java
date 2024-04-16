@@ -94,11 +94,6 @@ public class Coordonnee implements Cloneable {
 //        return x * 31 + y;
 //    }
 
-    public Coordonnee cloner() throws CloneNotSupportedException {
-        Coordonnee coordonnee = (Coordonnee) this.clone();
-        return coordonnee;
-    }
-
 //    @Override
 //    public int compareTo(Coordonnee coordonnee) {
 //        int compareX =  (x < coordonnee.x) ? -1 : ((x == coordonnee.x) ? 0 : 1);
@@ -107,5 +102,12 @@ public class Coordonnee implements Cloneable {
 //        }
 //        return (y < coordonnee.y) ? -1 : ((y == coordonnee.y) ? 0 : 1);
 //    }
+
+    public Coordonnee cloner() throws CloneNotSupportedException {
+        Coordonnee coordonnee = (Coordonnee) this.clone();
+        return coordonnee;
+    }
+
+
 }
 

@@ -4,7 +4,7 @@ import _utilitaire.Utilitaire;
 
 import java.util.*;
 
-public class Ex5_5AccesElements {
+public class Ex4_5AccesElements {
     public static final int NB_COORDONNEES = 1000000;
     public static final int NB_DE_GET = 50;
     private Set<Coordonnee>[] tabSet = new Set[]{
@@ -17,8 +17,9 @@ public class Ex5_5AccesElements {
     private List<Coordonnee> listeDeCoordonnees;
     int nbDEchecDAjoutAuSet;
 
-    public Ex5_5AccesElements() {
-        long start, tempsMilli;
+    public Ex4_5AccesElements() {
+        long startTime;
+        long tempsAjout, tempsRecherche;
         String strNomSet;
 
         remplirLArrayDeCoordonneesAletoire(NB_COORDONNEES);
@@ -28,15 +29,18 @@ public class Ex5_5AccesElements {
             strNomSet = s.getClass().getSimpleName();
             System.out.println("########### " + strNomSet);
 
-            start = new Date().getTime(); //Returns the number of milliseconds since January 1, 1970, 00:00:00 GMT
+            startTime = new Date().getTime(); //Returns the number of milliseconds since January 1, 1970, 00:00:00 GMT
             ajouterCoordonneAuSet();
-            tempsMilli = new Date().getTime() - start;
-            System.out.println("Temps d'ajout d'éléments dans un " + strNomSet + ": " + tempsMilli +" millisecondes");
+            tempsAjout = new Date().getTime() - startTime;
+            System.out.println("Temps d'ajout d'éléments dans un " + strNomSet + ": " + tempsAjout + " millisecondes");
 
-            start = new Date().getTime(); //Returns the number of milliseconds since January 1, 1970, 00:00:00 GMT
+            startTime = new Date().getTime(); //Returns the number of milliseconds since January 1, 1970, 00:00:00 GMT
             testerRechercher(NB_DE_GET);
-            tempsMilli = new Date().getTime() - start;
-            System.out.println("Temps de recherche pour " + NB_DE_GET * 2 + " éléments dans un " + strNomSet + ": " + tempsMilli +" millisecondes");
+            tempsRecherche = new Date().getTime() - startTime;
+            System.out.println("Temps de recherche pour " + NB_DE_GET * 2 + " éléments dans un " + strNomSet + ": " + tempsRecherche + " millisecondes");
+
+            System.out.println("Temps total pour un " + strNomSet + ": " + tempsAjout + tempsRecherche + " millisecondes");
+
         }
     }
 
@@ -62,6 +66,7 @@ public class Ex5_5AccesElements {
     /**
      * Le Set en Java ne propose pas de méthode pour récupérer un élément par sa valeur.
      * Utilisez un itérateur pour parcourir les éléments et accéder à un élément qui vous intéresse.
+     *
      * @param coordonneeCherche
      */
     private void getFromSet(Coordonnee coordonneeCherche) { //Pour
@@ -80,7 +85,7 @@ public class Ex5_5AccesElements {
         boolean succes;
         nbDEchecDAjoutAuSet = 0;
 
-        for (Coordonnee coordonnneAAjouter: listeDeCoordonnees) {
+        for (Coordonnee coordonnneAAjouter : listeDeCoordonnees) {
             succes = setCoodonnees.add(coordonnneAAjouter);
             if (!succes) {
                 System.out.println("Échec #" + ++nbDEchecDAjoutAuSet + " d'ajouter ce point " + coordonnneAAjouter);
@@ -90,6 +95,6 @@ public class Ex5_5AccesElements {
     }
 
     public static void main(String[] args) {
-        new Ex5_5AccesElements();
+        new Ex4_5AccesElements();
     }
 }
