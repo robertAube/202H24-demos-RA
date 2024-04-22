@@ -6,7 +6,7 @@ import java.util.*;
 
 public class Ex4_5AccesElements {
     public static final int NB_COORDONNEES = 1000000;
-    public static final int NB_DE_GET = 50;
+    public static final int NB_DE_RECHERCHE = 50;
     private Set<Coordonnee>[] tabSet = new Set[]{
             new TreeSet<>(), //ordonné par clé
             new HashSet<>(), //sans ordre
@@ -26,7 +26,7 @@ public class Ex4_5AccesElements {
 
         for (Set<Coordonnee> s : tabSet) {
             setCoodonnees = s;
-            strNomSet = s.getClass().getSimpleName();
+            strNomSet = setCoodonnees.getClass().getSimpleName();
             System.out.println("########### " + strNomSet);
 
             startTime = new Date().getTime(); //Returns the number of milliseconds since January 1, 1970, 00:00:00 GMT
@@ -35,11 +35,11 @@ public class Ex4_5AccesElements {
             System.out.println("Temps d'ajout d'éléments dans un " + strNomSet + ": " + tempsAjout + " millisecondes");
 
             startTime = new Date().getTime(); //Returns the number of milliseconds since January 1, 1970, 00:00:00 GMT
-            testerRechercher(NB_DE_GET);
+            testerRechercher(NB_DE_RECHERCHE);
             tempsRecherche = new Date().getTime() - startTime;
-            System.out.println("Temps de recherche pour " + NB_DE_GET * 2 + " éléments dans un " + strNomSet + ": " + tempsRecherche + " millisecondes");
+            System.out.println("Temps de recherche pour " + NB_DE_RECHERCHE * 2 + " éléments dans un " + strNomSet + ": " + tempsRecherche + " millisecondes");
 
-            System.out.println("Temps total pour un " + strNomSet + ": " + tempsAjout + tempsRecherche + " millisecondes");
+            System.out.println("Temps total pour un " + strNomSet + ": " + (tempsAjout + tempsRecherche) + " millisecondes");
 
         }
     }
@@ -47,7 +47,7 @@ public class Ex4_5AccesElements {
     private void remplirLArrayDeCoordonneesAletoire(int nbCoordonnees) {
         int x, y;
 
-        listeDeCoordonnees = new ArrayList<>();
+        listeDeCoordonnees = new ArrayList<>(nbCoordonnees); //initialiser dès le départ le tableau avec la bonne longueur
         for (int i = 0; i < nbCoordonnees; i++) {
             x = Utilitaire.getRandomInRange(Coordonnee.MIN_XY, Coordonnee.MAX_XY);
             y = Utilitaire.getRandomInRange(Coordonnee.MIN_XY, Coordonnee.MAX_XY);
@@ -59,7 +59,7 @@ public class Ex4_5AccesElements {
         nbTest = nbTest > setCoodonnees.size() ? setCoodonnees.size() : nbTest;
         for (int i = 0; i < nbTest; i++) { //On fait 2 recherches par itération
             getFromSet(listeDeCoordonnees.get(i));
-            getFromSet(listeDeCoordonnees.get(nbTest - 1 - i));
+            getFromSet(listeDeCoordonnees.get(listeDeCoordonnees.size() - 1 - i));
         }
     }
 
@@ -71,12 +71,14 @@ public class Ex4_5AccesElements {
      */
     private void getFromSet(Coordonnee coordonneeCherche) { //Pour
         Iterator<Coordonnee> it = setCoodonnees.iterator(); // Récupération de l'itérateur
+        boolean estTrouve = false;
 
         // Parcours des éléments
-        while (it.hasNext()) {
+        while (!estTrouve && it.hasNext()) {
             Coordonnee coordonneeDuSet = it.next();
             if (coordonneeCherche.equals(coordonneeDuSet)) {
                 //   System.out.println("Élément : " + coordonneeDuSet);
+                estTrouve = true;
             }
         }
     }
@@ -88,7 +90,7 @@ public class Ex4_5AccesElements {
         for (Coordonnee coordonnneAAjouter : listeDeCoordonnees) {
             succes = setCoodonnees.add(coordonnneAAjouter);
             if (!succes) {
-                System.out.println("Échec #" + ++nbDEchecDAjoutAuSet + " d'ajouter ce point " + coordonnneAAjouter);
+                //    System.out.println("Échec #" + ++nbDEchecDAjoutAuSet + " d'ajouter ce point " + coordonnneAAjouter);
             }
         }
         System.out.println("Il y a " + setCoodonnees.size() + " ajoutés à la " + setCoodonnees.getClass().getSimpleName() + '.');

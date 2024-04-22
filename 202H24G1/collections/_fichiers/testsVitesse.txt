@@ -1,0 +1,113 @@
+########### TreeSet
+Il y a 999990 ajoutés à la TreeSet.
+Temps d'ajout d'éléments dans un TreeSet: 654 millisecondes
+Temps de recherche pour 100 éléments dans un TreeSet: 2609 millisecondes
+Temps total pour un TreeSet: 3263 millisecondes
+########### HashSet
+Il y a 999990 ajoutés à la HashSet.
+Temps d'ajout d'éléments dans un HashSet: 176 millisecondes
+Temps de recherche pour 100 éléments dans un HashSet: 4556 millisecondes
+Temps total pour un HashSet: 4732 millisecondes
+########### LinkedHashSet
+Il y a 999990 ajoutés à la LinkedHashSet.
+Temps d'ajout d'éléments dans un LinkedHashSet: 220 millisecondes
+Temps de recherche pour 100 éléments dans un LinkedHashSet: 780 millisecondes
+Temps total pour un LinkedHashSet: 1000 millisecondes
+
+########### TreeSet return Objects.hash(x, y);
+Il y a 999988 ajoutés à la TreeSet.
+Temps d'ajout d'éléments dans un TreeSet: 642 millisecondes
+Temps de recherche pour 100 éléments dans un TreeSet: 1411 millisecondes
+Temps total pour un TreeSet: 2053 millisecondes
+########### HashSet
+Il y a 999988 ajoutés à la HashSet.
+Temps d'ajout d'éléments dans un HashSet: 148 millisecondes
+Temps de recherche pour 100 éléments dans un HashSet: 2068 millisecondes
+Temps total pour un HashSet: 2216 millisecondes
+########### LinkedHashSet
+Il y a 999988 ajoutés à la LinkedHashSet.
+Temps d'ajout d'éléments dans un LinkedHashSet: 211 millisecondes
+Temps de recherche pour 100 éléments dans un LinkedHashSet: 406 millisecondes
+Temps total pour un LinkedHashSet: 617 millisecondes
+
+
+########### TreeSet return x;
+Il y a 999994 ajoutés à la TreeSet.
+Temps d'ajout d'éléments dans un TreeSet: 650 millisecondes
+Temps de recherche pour 100 éléments dans un TreeSet: 1464 millisecondes
+Temps total pour un TreeSet: 2114 millisecondes
+########### HashSet
+Il y a 999994 ajoutés à la HashSet.
+Temps d'ajout d'éléments dans un HashSet: 304 millisecondes
+Temps de recherche pour 100 éléments dans un HashSet: 1591 millisecondes
+Temps total pour un HashSet: 1895 millisecondes
+########### LinkedHashSet
+Il y a 999994 ajoutés à la LinkedHashSet.
+Temps d'ajout d'éléments dans un LinkedHashSet: 358 millisecondes
+Temps de recherche pour 100 éléments dans un LinkedHashSet: 918 millisecondes
+Temps total pour un LinkedHashSet: 1276 millisecondes
+
+########### TreeSet
+Il y a 999991 ajoutés à la TreeSet.
+Temps d'ajout d'éléments dans un TreeSet: 680 millisecondes
+Temps de recherche pour 100 éléments dans un TreeSet: 1522 millisecondes
+Temps total pour un TreeSet: 2202 millisecondes
+########### HashSet
+Il y a 999991 ajoutés à la HashSet.
+Temps d'ajout d'éléments dans un HashSet: 237 millisecondes
+Temps de recherche pour 100 éléments dans un HashSet: 2408 millisecondes
+Temps total pour un HashSet: 2645 millisecondes
+########### LinkedHashSet
+Il y a 999991 ajoutés à la LinkedHashSet.
+Temps d'ajout d'éléments dans un LinkedHashSet: 308 millisecondes
+Temps de recherche pour 100 éléments dans un LinkedHashSet: 611 millisecondes
+Temps total pour un LinkedHashSet: 919 millisecondes
+
+
+########### TreeSet
+Il y a 999986 ajoutés à la TreeSet.
+Temps d'ajout d'éléments dans un TreeSet: 653 millisecondes
+Temps de recherche pour 100 éléments dans un TreeSet: 1514 millisecondes
+Temps total pour un TreeSet: 2167 millisecondes
+########### HashSet
+Il y a 999986 ajoutés à la HashSet.
+Temps d'ajout d'éléments dans un HashSet: 149 millisecondes
+Temps de recherche pour 100 éléments dans un HashSet: 2457 millisecondes
+Temps total pour un HashSet: 2606 millisecondes
+########### LinkedHashSet
+Il y a 999986 ajoutés à la LinkedHashSet.
+Temps d'ajout d'éléments dans un LinkedHashSet: 176 millisecondes
+Temps de recherche pour 100 éléments dans un LinkedHashSet: 387 millisecondes
+Temps total pour un LinkedHashSet: 563 millisecondes
+
+########### TreeSet return 1;
+Il y a 999984 ajoutés à la TreeSet.
+Temps d'ajout d'éléments dans un TreeSet: 645 millisecondes
+Temps de recherche pour 100 éléments dans un TreeSet: 1450 millisecondes
+Temps total pour un TreeSet: 2095 millisecondes
+########### HashSet
+Il y a 999984 ajoutés à la HashSet.
+Temps d'ajout d'éléments dans un HashSet: 820 millisecondes
+Temps de recherche pour 100 éléments dans un HashSet: 1771 millisecondes
+Temps total pour un HashSet: 2591 millisecondes
+########### LinkedHashSet
+Il y a 999984 ajoutés à la LinkedHashSet.
+Temps d'ajout d'éléments dans un LinkedHashSet: 949 millisecondes
+Temps de recherche pour 100 éléments dans un LinkedHashSet: 2096 millisecondes
+Temps total pour un LinkedHashSet: 3045 millisecondes
+
+########### TreeSet
+Il y a 999985 ajoutés à la TreeSet.
+Temps d'ajout d'éléments dans un TreeSet: 678 millisecondes
+Temps de recherche pour 100 éléments dans un TreeSet: 1490 millisecondes
+Temps total pour un TreeSet: 2168 millisecondes
+########### HashSet
+Il y a 999985 ajoutés à la HashSet.
+Temps d'ajout d'éléments dans un HashSet: 133 millisecondes
+Temps de recherche pour 100 éléments dans un HashSet: 2739 millisecondes
+Temps total pour un HashSet: 2872 millisecondes
+########### LinkedHashSet
+Il y a 999985 ajoutés à la LinkedHashSet.
+Temps d'ajout d'éléments dans un LinkedHashSet: 175 millisecondes
+Temps de recherche pour 100 éléments dans un LinkedHashSet: 395 millisecondes
+Temps total pour un LinkedHashSet: 570 millisecondes

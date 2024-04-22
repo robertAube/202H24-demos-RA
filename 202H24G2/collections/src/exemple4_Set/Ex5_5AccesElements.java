@@ -6,7 +6,7 @@ import java.util.*;
 
 public class Ex5_5AccesElements {
     public static final int NB_COORDONNEES = 1000000;
-    public static final int NB_DE_GET = 50;
+    public static final int NB_DE_RECHERCHE = 50;
     private Set<Coordonnee>[] tabSet = new Set[]{
             new TreeSet<>(), //ordonné par clé
             new HashSet<>(), //sans ordre
@@ -34,16 +34,16 @@ public class Ex5_5AccesElements {
             System.out.println("Temps d'ajout d'éléments dans un " + strNomSet + ": " + tempsMilli +" millisecondes");
 
             start = new Date().getTime(); //Returns the number of milliseconds since January 1, 1970, 00:00:00 GMT
-            testerRechercher(NB_DE_GET);
+            testerRechercher(NB_DE_RECHERCHE);
             tempsMilli = new Date().getTime() - start;
-            System.out.println("Temps de recherche pour " + NB_DE_GET * 2 + " éléments dans un " + strNomSet + ": " + tempsMilli +" millisecondes");
+            System.out.println("Temps de recherche pour " + NB_DE_RECHERCHE * 2 + " éléments dans un " + strNomSet + ": " + tempsMilli +" millisecondes");
         }
     }
 
     private void remplirLArrayDeCoordonneesAletoire(int nbCoordonnees) {
         int x, y;
 
-        listeDeCoordonnees = new ArrayList<>();
+        listeDeCoordonnees = new ArrayList<>(nbCoordonnees);
         for (int i = 0; i < nbCoordonnees; i++) {
             x = Utilitaire.getRandomInRange(Coordonnee.MIN_XY, Coordonnee.MAX_XY);
             y = Utilitaire.getRandomInRange(Coordonnee.MIN_XY, Coordonnee.MAX_XY);
@@ -66,12 +66,15 @@ public class Ex5_5AccesElements {
      */
     private void getFromSet(Coordonnee coordonneeCherche) { //Pour
         Iterator<Coordonnee> it = setCoodonnees.iterator(); // Récupération de l'itérateur
+        boolean estTrouve;
 
         // Parcours des éléments
-        while (it.hasNext()) {
+        estTrouve = false;
+        while (it.hasNext() && !estTrouve) {
             Coordonnee coordonneeDuSet = it.next();
             if (coordonneeCherche.equals(coordonneeDuSet)) {
-                //   System.out.println("Élément : " + coordonneeDuSet);
+                estTrouve = true;
+             //   System.out.println("Élément : " + coordonneeDuSet);
             }
         }
     }
@@ -82,8 +85,8 @@ public class Ex5_5AccesElements {
 
         for (Coordonnee coordonnneAAjouter: listeDeCoordonnees) {
             succes = setCoodonnees.add(coordonnneAAjouter);
-            if (!succes) {
-                System.out.println("Échec #" + ++nbDEchecDAjoutAuSet + " d'ajouter ce point " + coordonnneAAjouter);
+            if (!succes) { //si déjà là
+     //           System.out.println("Échec #" + ++nbDEchecDAjoutAuSet + " d'ajouter ce point " + coordonnneAAjouter);
             }
         }
         System.out.println("Il y a " + setCoodonnees.size() + " ajoutés à la " + setCoodonnees.getClass().getSimpleName() + '.');

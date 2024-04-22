@@ -1,10 +1,12 @@
 package exemple4_Set;
 
+import java.util.Objects;
+
 /**
  * @author Robert Aubé
  * @version 1.0
  */
-public class Coordonnee implements Cloneable {
+public class Coordonnee implements Cloneable, Comparable<Coordonnee> {
     public static final int MIN_XY = -100000;
     public static final int MAX_XY = 100000;
 
@@ -51,7 +53,7 @@ public class Coordonnee implements Cloneable {
     }
 
     private void setHash() {
-        hash = x + y;
+        hash = 31 * x + y;
     }
 
     public void translate(int dx, int dy) {
@@ -86,6 +88,17 @@ public class Coordonnee implements Cloneable {
         return y == that.y && x == that.x;
     }
 
+    @Override
+    public int hashCode() {
+//        int result = x;
+//        result = 31 * result + y;
+//        return result;
+//        return Objects.hash(x, y);
+//        return x + y;
+        return hash;
+    }
+
+
 //    @Override
 //    public int hashCode() {
 //        return Objects.hash(x, y, hash);
@@ -94,14 +107,14 @@ public class Coordonnee implements Cloneable {
 //        return x * 31 + y;
 //    }
 
-    //    @Override
-//    public int compareTo(Coordonnee coordonnee) {
-//        int compareX =  (x < coordonnee.x) ? -1 : ((x == coordonnee.x) ? 0 : 1);
-//        if (compareX != 0) {
-//            return compareX;
-//        }
-//        return (y < coordonnee.y) ? -1 : ((y == coordonnee.y) ? 0 : 1);
-//    }
+        @Override
+    public int compareTo(Coordonnee coordonnee) {
+        int compareX =  (x < coordonnee.x) ? -1 : ((x == coordonnee.x) ? 0 : 1);
+        if (compareX != 0) {
+            return compareX;
+        }
+        return (y < coordonnee.y) ? -1 : ((y == coordonnee.y) ? 0 : 1);
+    }
 
     public Coordonnee cloner() throws CloneNotSupportedException {
         Coordonnee coordonnee = (Coordonnee) this.clone();
