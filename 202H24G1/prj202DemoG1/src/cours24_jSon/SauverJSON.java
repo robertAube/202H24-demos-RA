@@ -1,11 +1,11 @@
-package cours23_jSon;
+package cours24_jSon;
 // https://repo1.maven.org/maven2/com/google/code/gson/gson/2.9.1/
 
 import _utilitaire.GestionFichier;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
-import java.io.*;
+import java.io.File;
 
 public class SauverJSON {
     private static char fSep = File.separatorChar;
@@ -15,7 +15,7 @@ public class SauverJSON {
 
     public SauverJSON() {
         listeContenants = new ListeContenants();
-       // System.out.println(listeContenants);
+        System.out.println(listeContenants);
         sauverListeContenants(PATH_DEFAUT + "contenants.json");
         listeContenants.clear();
         lireListeContenants(PATH_DEFAUT + "contenants.json");
@@ -28,9 +28,8 @@ public class SauverJSON {
 
         json = new Gson();
         json = new GsonBuilder().setPrettyPrinting().create();
-        strJson = json.toJson(listeContenants);
 
-        System.out.println(strJson);
+        strJson = json.toJson(listeContenants);
 
         GestionFichier.ecrireFichierTexte(nomFichier, strJson);
     }
@@ -39,7 +38,10 @@ public class SauverJSON {
         Gson json = new Gson();
         String contenuFichier;
 
-        contenuFichier = GestionFichier.lireFichierTexte(nomFichier);
+        contenuFichier =  GestionFichier.lireFichierTexte(nomFichier);
+
+        System.out.println(contenuFichier);
+
         listeContenants = json.fromJson(contenuFichier, ListeContenants.class);
     }
 

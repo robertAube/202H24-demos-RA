@@ -23,7 +23,6 @@ public class Utilitaire {
         return reponse;
     }
 
-
     public static int lireInt(String question) {
         String reponse;
         int reponseInt;
@@ -43,11 +42,4 @@ public class Utilitaire {
         return x;
     }
 
-    public static void saveTextToFile(String strToSave, String filePath) {
-        try (PrintWriter out = new PrintWriter(filePath)) {
-            out.println(strToSave);
-        } catch (FileNotFoundException e) {
-            System.out.println("Fichier non trouvé : " + filePath);;
-        }
-    }
 }

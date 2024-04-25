@@ -76,7 +76,7 @@ public class GestionFichier {
      * @param lignes     contenu du fichier. Chaque élément de lignes
      * @param nomFichier nom du fichier
      */
-    public static void ecrireFichierTexte(ArrayList<Object> lignes, String nomFichier) {
+    public static void ecrireFichier(ArrayList<Object> lignes, String nomFichier) {
         try {
             PrintWriter sortie = new PrintWriter(new FileWriter(nomFichier));
 

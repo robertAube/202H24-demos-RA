@@ -11,7 +11,6 @@ public class ListeContenants implements Serializable {
         listeContenant.add(new ContenantLiquide("Verre", new Liquide("Eau", 1000), 300, 250));
         listeContenant.add(new ContenantLiquide("Tasse", new Liquide("café", 1010), 350, 200));
         listeContenant.add(new ContenantLiquide("Pipette", new Liquide("café", 1010), 250, 200));
-
     }
 
     public void clear() {

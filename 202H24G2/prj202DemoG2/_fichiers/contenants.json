@@ -1,0 +1,32 @@
+{
+  "listeContenant": [
+    null,
+    {
+      "nom": "Verre",
+      "capaciteMl": 300,
+      "qte": 250,
+      "liquide": {
+        "nom": "Eau",
+        "masseVolumique_KgParM3": 1000
+      }
+    },
+    {
+      "nom": "Tasse",
+      "capaciteMl": 350,
+      "qte": 200,
+      "liquide": {
+        "nom": "café",
+        "masseVolumique_KgParM3": 1010
+      }
+    },
+    {
+      "nom": "Pipette",
+      "capaciteMl": 250,
+      "qte": 200,
+      "liquide": {
+        "nom": "café",
+        "masseVolumique_KgParM3": 1010
+      }
+    }
+  ]
+}
