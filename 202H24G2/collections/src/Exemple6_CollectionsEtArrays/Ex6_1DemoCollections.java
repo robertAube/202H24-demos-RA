@@ -25,11 +25,11 @@ public class Ex6_1DemoCollections {
     public Ex6_1DemoCollections() {
         for (List<String> c : tabList) {
             list = c;
-            jouerAvecCollection();
+            jouerAvec_ClasseCollection();
         }
     }
 
-    private void jouerAvecCollection() {
+    private void jouerAvec_ClasseCollection() {
         String nomList = list.getClass().getSimpleName();
         // Ajouter une couleur au tableau et à la List.
         list.add("jaune");
