@@ -1,11 +1,71 @@
 package cours23_recursivite;
 
+import java.util.Arrays;
+
 public class DemoRecursivite {
     public DemoRecursivite() {
-        tester_fibonacci();
+        trouverValTest();
+//        tester_decToBin();
+        //tester_fibonacci();
         //tester_estMultipleDeCinq();
         //tester_getNbCarInStr();
     }
+
+    private void trouverValTest() {
+        int tab[] = {1, 3, 4, 7, 8, 9, 10};
+        int itrouve;
+
+        System.out.println(Arrays.toString(tab));
+
+        System.out.println(trouverVal(tab, 0) == -1);
+        System.out.println(trouverVal(tab, 2) == -1);
+        System.out.println(trouverVal(tab, 11) == -1);
+
+        for (int i = 0; i < tab.length; i++) {
+            itrouve = trouverVal(tab, tab[i]);
+            System.out.println(tab[i] + " est trouvé à l'indice " + itrouve + '.');
+        }
+
+        System.out.println(trouverVal(tab, 7) == 3);
+        System.out.println(trouverVal(tab, 4) == 2);
+        System.out.println(trouverVal(tab, 1) == 0);
+        System.out.println(trouverVal(tab, 10) == 6);
+    }
+
+    /**
+     * Fonction récursive qui retournera l'indice où se trouve un <b>entier recherché</b>
+     * dans un tableau de N entiers triés en ordre croissant.
+     * Utilisez la recherche dichotomique.
+     *
+     * @param tab          le tableau de recherche
+     * @param valRecherche l'entier à trouver
+     * @return l'indice de l'entier trouvé ou -1 si pas trouvé.
+     */
+    public static int trouverVal(int[] tab, int valRecherche) {
+        int iTrouve;
+
+        iTrouve = trouverVal(tab, valRecherche, 0, tab.length - 1);
+        return iTrouve;
+    }
+
+    public static int trouverVal(int[] tab, int valRecherche, int iDebut, int iFin) {
+        int iTrouve = -1;
+        int iMilieu;
+
+        if (iDebut <= iFin) {
+            iMilieu = (iDebut + iFin) / 2;
+            if (tab[iMilieu] == valRecherche) {
+                iTrouve = iMilieu;
+            } else if (tab[iMilieu] > valRecherche) {
+                iTrouve = trouverVal(tab, valRecherche, iDebut, iMilieu - 1);
+            } else {
+                iTrouve = trouverVal(tab, valRecherche, iMilieu + 1, iFin);
+            }
+        }
+
+        return iTrouve;
+    }
+
 
     private void tester_decToBin() {
         System.out.println(decToBin(0).equals("0"));
@@ -13,6 +73,28 @@ public class DemoRecursivite {
         System.out.println(decToBin(2).equals("10"));
         System.out.println(decToBin(3).equals("11"));
         System.out.println(decToBin(4).equals("100"));
+
+        for (int i = 0; i < 24; i++) {
+            System.out.println(i + "d = " + decToBin(i) + "b");
+
+        }
+    }
+
+    public String decToBin(int n) {
+        String str = "?";
+
+        if (n == 0) {
+            str = "0";
+        } else if (n == 1) {
+            str = "1";
+        } else if (n % 2 == 0) { //si est pair
+            str = decToBin(n / 2) + '0';
+        } else {
+            str = decToBin(n / 2) + '1';
+        }
+
+
+        return str;
     }
 
     /**
