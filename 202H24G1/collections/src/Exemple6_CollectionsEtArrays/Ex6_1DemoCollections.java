@@ -14,7 +14,7 @@ import java.util.LinkedList;
  * Collections.fill
  */
 public class Ex6_1DemoCollections {
-    private String couleurs[] = {"noir", "rouge", "blanc", "rouge", "vert", "gris", "blanc"};
+    private String tabCouleurs[] = {"noir", "rouge", "blanc", "rouge", "vert", "gris", "blanc"};
     List<String> list;
 
     List<String>[] tabList = new List[]{
@@ -35,7 +35,7 @@ public class Ex6_1DemoCollections {
         list.add("jaune");
 
         //Ajouter des chaînes de couleur au tableau et à la List
-        list.addAll(Arrays.asList(couleurs));
+        list.addAll(Arrays.asList(tabCouleurs));
 
         // Afficher le contenu du tableau et de la liste
         System.out.println("###########\n" + nomList + " après l'ajout des couleurs : ");

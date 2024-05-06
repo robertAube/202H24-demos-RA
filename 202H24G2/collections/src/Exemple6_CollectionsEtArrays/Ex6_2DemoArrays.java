@@ -55,7 +55,7 @@ public class Ex6_2DemoArrays {
         System.out.print("\nArrays.equals(tabInt, tabIntCopySort) = ");
         System.out.println(Arrays.equals(tabInt, tabIntCopySort));
 
-        //cloner un tableau
+        //cloner un tableau en profondeur
         System.out.println("\ntabIntCopySort.clone() : ");
         tabInt = tabIntCopySort.clone();
         System.out.println("tabInt" + Arrays.toString(tabInt));
@@ -67,6 +67,7 @@ public class Ex6_2DemoArrays {
         tabIntCopySort[0] = -4;
         System.out.println("tabInt" + Arrays.toString(tabInt));
         System.out.println("tabIntCopySort" + Arrays.toString(tabIntCopySort));
+        System.out.print("Arrays.equals(tabInt, tabIntCopySort) = ");
         System.out.println(Arrays.equals(tabInt, tabIntCopySort));
     }
 

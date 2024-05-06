@@ -16,10 +16,10 @@ public class DemoRegex {
     };
 
     public DemoRegex() {
-        regex1_correspondExactement();
+//        regex1_correspondExactement();
 //        regex2_estDansUneChaine();
 //        regex3_trouverLesMatchs();
-//        regex4_remplacerLesMatchs();
+        regex4_remplacerLesMatchs();
     }
 
     /**
