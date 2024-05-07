@@ -4,11 +4,60 @@ import java.util.Arrays;
 
 public class DemoRecursivite {
     public DemoRecursivite() {
-        trouverValTest();
+//        tester_max1();
+//        trouverValTest();
+        tester_max2();
 //        tester_decToBin();
 //        tester_fibonacci();
         //tester_estMultipleDeCinq();
         //tester_getNbCarInStr();
+    }
+
+    private void tester_max1() {
+        System.out.println(max1(new int[]{3, 1, 6, 2, 5}));
+        System.out.println(max1(new int[]{9}));
+        System.out.println(max1(new int[]{}));
+    }
+
+    private void tester_max2() {
+        System.out.println(max2(new int[]{3, 1, 6, 2, 5}));
+        System.out.println(max2(new int[]{9}));
+        System.out.println(max2(new int[]{}));
+    }
+
+    public static int max2(int[] tab) {
+        int max;
+        int maxDesSuivants;
+        int tabRestant[];
+
+        max = tab[0];
+        if (tab.length > 1) {
+            tabRestant = Arrays.copyOfRange(tab, 1, tab.length);
+            maxDesSuivants = max2(tabRestant);
+//            max = max > maxDesSuivants ? max : maxDesSuivants;
+            max= Math.max(max, maxDesSuivants);
+        }
+
+        return max;
+    }
+
+
+    public static int max1(int[] tab) {
+        return max1(tab, 0, tab.length - 1);
+    }
+
+    private static int max1(int[] tab, int iDebut, int iFin) {
+        int max;
+        if (iDebut == iFin) {
+            max = tab[iDebut];
+        } else {
+            if (tab[iDebut] < tab[iFin]) {
+                max = max1(tab, iDebut + 1, iFin);
+            } else {
+                max = max1(tab, iDebut, iFin - 1);
+            }
+        }
+        return max;
     }
 
     private void trouverValTest() {
@@ -42,7 +91,7 @@ public class DemoRecursivite {
      * @return l'indice de l'entier trouvé ou -1 si pas trouvé.
      */
     public static int trouverVal(int[] tab, int valRecherche) {
-        return trouverVal(tab, valRecherche, 0, tab.length-1);
+        return trouverVal(tab, valRecherche, 0, tab.length - 1);
     }
 
     public static int trouverVal(int[] tab, int valRecherche, int iDebut, int iFin) {

@@ -4,11 +4,28 @@ import java.util.Arrays;
 
 public class DemoRecursivite {
     public DemoRecursivite() {
-        trouverValTest();
+        tester_inverser();
+        //      trouverValTest();
 //        tester_decToBin();
         //tester_fibonacci();
         //tester_estMultipleDeCinq();
         //tester_getNbCarInStr();
+    }
+
+    private void tester_inverser() {
+        System.out.println(inverser("hello world"));
+    }
+
+    public static String inverser(String strAInv) {
+        String str;
+
+        str = "";
+        if (!strAInv.isEmpty()) {
+            str = inverser(strAInv.substring(1, strAInv.length())) + strAInv.charAt(0);
+            //str = strAInv.charAt(strAInv.length() - 1) + inverser(strAInv.substring(0, strAInv.length() - 1));
+        }
+
+        return str;
     }
 
     private void trouverValTest() {
